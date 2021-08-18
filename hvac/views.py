@@ -13,8 +13,8 @@ def allowSelfSignedHttps(allowed):
     if allowed and not os.environ.get('PYTHONHTTPSVERIFY', '') and getattr(ssl, '_create_unverified_context', None):
         ssl._create_default_https_context = ssl._create_unverified_context
 
-# def index(request):
-#     return render(request, "tables/table2.html")
-
 def index(request):
-    return HttpResponse("Hello, World!")
+    return render(request, "tables/table1.html")
+
+# def index(request):
+#     return HttpResponse("Hello, World!")
