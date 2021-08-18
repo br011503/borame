@@ -15,6 +15,3 @@ def allowSelfSignedHttps(allowed):
 
 def index(request):
     return render(request, "tables/table1.html")
-
-# def index(request):
-#     return HttpResponse("Hello, World!")
