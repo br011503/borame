@@ -116,9 +116,5 @@ USE_L10N = True
 
 USE_TZ = True
 
-BASE_DIR = os.getcwd()+'/hvac/'
 STATIC_URL = '/static/'
 STATIC_DIR = os.path.join(BASE_DIR, 'static')
-STATICFILES_DIRS = [STATIC_DIR]
-ROOT_DIR = os.path.dirname(BASE_DIR)
-STATIC_ROOT = os.path.join(BASE_DIR, 'static')
