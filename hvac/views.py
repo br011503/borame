@@ -14,4 +14,4 @@ def allowSelfSignedHttps(allowed):
         ssl._create_default_https_context = ssl._create_unverified_context
 
 def index(request):
-    return render(request, "tables/table1.html")
+    return render(request, "tables/table2.html")
