@@ -19,7 +19,7 @@ def index(request):
 def page_hvac(request):
     return render(request, "tables/page_hvac.html")
 
-def page_tempe(request):
+def page_temp(request):
     return render(request, "tables/page_temp.html")
 
 def page_cool(request):
