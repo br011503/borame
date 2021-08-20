@@ -46,9 +46,9 @@
                                 <div class="feature bg-primary bg-gradient text-white rounded-3 mb-4 mt-n4"><i class="bi bi-thermometer-high"></i></div>
                               <!-- 부트스트랩 --> <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script> <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script> <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script> <!-- 차트 -->
                                 <h2 class="fs-4 fw-bold">실내온도 분포(최상위 10개층)</h2>
-                                <canvas id="myChart"></canvas>
+                                <canvas id="myChart" width="200" height="200"></canvas>
                                 <script> var ctx = document.getElementById('myChart'); 
-                                  var myChart = new Chart(ctx, { type: 'bar', 
+                                  var myChart = new Chart(ctx, { type: 'horizontalBar', 
                                                                 data: { labels: ['1층', '2층', '3층', '4층', '5층', '6층', '7층', '8층', '9층', '10층'], 
                                                                        datasets: [{ label: '실내온도', 
                                                                                    data: [26, 27, 28, 28, 25, 29, 30, 31, 29, 27], 
@@ -59,7 +59,9 @@
                                                                                                      'rgba(153, 102, 255, 0.2)',
                                                                                                      'rgba(255, 159, 64, 0.2)',
                                                                                                      'rgba(255, 99, 132, 0.2)',
-                                                                                                     'rgba(54, 162, 235, 0.2)'], 
+                                                                                                     'rgba(54, 162, 235, 0.2)',
+                                                                                                     'rgba(255, 206, 86, 0.2)',
+                                                                                                     'rgba(75, 192, 192, 0.2)',], 
                                                                                    borderColor: [ 'rgba(255, 99, 132, 1)', 
                                                                                                  'rgba(54, 162, 235, 1)', 
                                                                                                  'rgba(255, 206, 86, 1)',
@@ -67,9 +69,10 @@
                                                                                                  'rgba(153, 102, 255, 1)',
                                                                                                  'rgba(255, 159, 64, 1)',
                                                                                                  'rgba(255, 99, 132, 1)', 
-                                                                                                 'rgba(54, 162, 235, 1)', ], 
-                                                                                   borderWidth: 1 }] }, 
-                                                                options: { scales: { yAxes: [{ ticks: { beginAtZero: true } }] } } }); </script>
+                                                                                                 'rgba(54, 162, 235, 1)', 
+                                                                                                 'rgba(255, 206, 86, 1)',
+                                                                                                 'rgba(75, 192, 192, 1)'], borderWidth: 1 }] }, 
+                                                                options: { scales: { xAxes: [{ ticks: { beginAtZero: true } }] } } }); </script>
                                 <p class="fs-6">  </p>
                                 <p class="fs-6"> 어디어디 층이 높다. </p>
                                 <p class="fs-6"> 평균 몇도다 </p>
