@@ -19,11 +19,11 @@ def index(request):
 def page_hvac(request):
     return render(request, "tables/page_hvac.html")
 
-def page_temperature(request):
-    return render(request, "tables/page_temperature.html")
+def page_tempe(request):
+    return render(request, "tables/page_temp.html")
 
-def page_cooling(request):
-    return render(request, "tables/page_cooling.html")
+def page_cool(request):
+    return render(request, "tables/page_cool.html")
 
 def page_elec(request):
     return render(request, "tables/page_elec.html")
