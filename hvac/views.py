@@ -15,3 +15,18 @@ def allowSelfSignedHttps(allowed):
 
 def index(request):
     return render(request, "tables/table1.html")
+
+def page_hvac(request):
+    return render(request, "tables/page_hvac.html")
+
+def page_temperature(request):
+    return render(request, "tables/page_temperature.html")
+
+def page_cooling(request):
+    return render(request, "tables/page_cooling.html")
+
+def page_elec(request):
+    return render(request, "tables/page_elec.html")
+
+def page_peak(request):
+    return render(request, "tables/page_peak.html")
