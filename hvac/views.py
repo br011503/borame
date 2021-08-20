@@ -20,7 +20,7 @@ def page_hvac(request):
     return render(request, "tables/page_hvac.html")
 
 def page_temp(request):
-    return render(request, "tables/page_temp.html")
+    return render(request, "tables/page_temp2.html")
 
 def page_cool(request):
     return render(request, "tables/page_cool.html")
