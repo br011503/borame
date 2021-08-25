@@ -55,19 +55,19 @@
                                 <h2 class="fs-4 fw-bold">기상정보</h2>
                                 <div class="row">
                                     <div class="col">건구온도</div>
-                                    <div class="col">{{df2.건구온도.0}}℃</div>
+                                    <div class="col">{{df2.건구온도.0}}(℃)</div>
                                     <div class="col">습구온도</div>
-                                    <div class="col">{{df2.습구온도.0}}℃</div>
+                                    <div class="col">{{df2.습구온도.0}}(℃)</div>
                                     <div class="w-100"></div>
                                     <div class="col">상대습도</div>
-                                    <div class="col">{{df2.상대습도.0}}%</div>
+                                    <div class="col">{{df2.상대습도.0}}(%)</div>
                                     <div class="col">엔탈피</div>
-                                    <div class="col">{{df2.엔탈피.0}}kcal/kg</div>
+                                    <div class="col">{{df2.엔탈피.0}}(kcal/kg)</div>
                                     <div class="w-100"></div>
                                     <div class="col">PM10</div>
                                     <div class="col">{{df1.PM10.0}}</div>
                                     <div class="col">PM2.5</div>
-                                    <div class="col">{{df1.PM2.5.0}}</div>
+                                    <div class="col">{{df1.PM25.0}}</div>
                                 </div>
                             </div>
                         </div>
@@ -95,9 +95,9 @@
                                     <tr>
                                       <th scope="col">장비명</th>
                                       <th scope="col">상태</th>
-                                      <th scope="col">냉수공급</th>
-                                      <th scope="col">냉수환수</th>
-                                      <th scope="col">dt</th>
+                                      <th scope="col">냉수공급온도(℃)</th>
+                                      <th scope="col">냉수환수온도(℃)</th>
+                                      <th scope="col">온도차(℃)</th>
 <!--                                       <th scope="col">냉수펌프</th>
                                       <th scope="col">냉각수펌프</th> -->
                                     </tr>
@@ -106,27 +106,27 @@
                                     <tr>
                                       <th scope="row">터보1</th>
                                       <td>{{df3.상태.0}}</td>
-                                      <td>{{df3.냉수공급.0}}℃</td>
-                                      <td>{{df3.냉수환수.0}}℃</td>
-                                      <td>{{df3.온도차.0}}℃</td>
+                                      <td>{{df3.냉수공급.0}}</td>
+                                      <td>{{df3.냉수환수.0}}</td>
+                                      <td>{{df3.온도차.0}}</td>
 <!--                                       <td>Otto</td>
                                       <td>@mdo</td> -->
                                     </tr>
                                     <tr>
                                       <th scope="row">터보2</th>
                                       <td>{{df3.상태.1}}</td>
-                                      <td>{{df3.냉수공급.1}}℃</td>
-                                      <td>{{df3.냉수환수.1}}℃</td>
-                                      <td>{{df3.온도차.1}}℃</td>
+                                      <td>{{df3.냉수공급.1}}</td>
+                                      <td>{{df3.냉수환수.1}}</td>
+                                      <td>{{df3.온도차.1}}</td>
 <!--                                       <td>Otto</td>
                                       <td>@mdo</td> -->
                                     </tr>
                                     <tr>
                                       <th scope="row">터보3</th>
                                       <td>{{df3.상태.2}}</td>
-                                      <td>{{df3.냉수공급.2}}℃</td>
-                                      <td>{{df3.냉수환수.2}}℃</td>
-                                      <td>{{df3.온도차.2}}℃</td>
+                                      <td>{{df3.냉수공급.2}}</td>
+                                      <td>{{df3.냉수환수.2}}</td>
+                                      <td>{{df3.온도차.2}}</td>
 <!--                                       <td>Otto</td>
                                       <td>@mdo</td> -->
                                     </tr>
@@ -142,27 +142,27 @@
                                     <tr>
                                       <th scope="row">터보5</th>
                                       <td>{{df3.상태.4}}</td>
-                                      <td>{{df3.냉수공급.4}}℃</td>
-                                      <td>{{df3.냉수환수.4}}℃</td>
-                                      <td>{{df3.온도차.4}}℃</td>
+                                      <td>{{df3.냉수공급.4}}</td>
+                                      <td>{{df3.냉수환수.4}}</td>
+                                      <td>{{df3.온도차.4}}</td>
 <!--                                       <td>Otto</td>
                                       <td>@mdo</td> -->
                                     </tr>
                                     <tr>
                                       <th scope="row">터보6</th>
                                       <td>{{df3.상태.5}}</td>
-                                      <td>{{df3.냉수공급.5}}℃</td>
-                                      <td>{{df3.냉수환수.5}}℃</td>
-                                      <td>{{df3.온도차.5}}℃</td>
+                                      <td>{{df3.냉수공급.5}}</td>
+                                      <td>{{df3.냉수환수.5}}</td>
+                                      <td>{{df3.온도차.5}}</td>
 <!--                                       <td>Otto</td>
                                       <td>@mdo</td> -->
                                     </tr>
                                     <tr>
                                       <th scope="row">터보7</th>
                                       <td>{{df3.상태.6}}</td>
-                                      <td>{{df3.냉수공급.6}}℃</td>
-                                      <td>{{df3.냉수환수.6}}℃</td>
-                                      <td>{{df3.온도차.6}}℃</td>
+                                      <td>{{df3.냉수공급.6}}</td>
+                                      <td>{{df3.냉수환수.6}}</td>
+                                      <td>{{df3.온도차.6}}</td>
 <!--                                       <td>Otto</td>
                                       <td>@mdo</td> -->
                                     </tr>
