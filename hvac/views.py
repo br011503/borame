@@ -37,6 +37,7 @@ def index(request):
     values['df1'] = json.loads(result['df1'])
     values['df2'] = json.loads(result['df2'])
     values['df3'] = json.loads(result['df3'])
+    values['time'] = result['time']
     return render(request, "tables/table1.html", context = values)
 
 def page_hvac(request):
