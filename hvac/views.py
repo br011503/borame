@@ -56,7 +56,6 @@ def page_temp(request):
     values = json.loads(result['df1'])
     values['df1'] = json.loads(result['df1'])
     values['df2'] = json.loads(result['df2'])
-    values['LOC'] = json.loads(result['LOC'])
     return render(request, "tables/page_temp.html", context = values)
 
 def page_cool(request):
@@ -76,7 +75,6 @@ def page_cool(request):
     values = json.loads(result['df1'])
     values['df1'] = json.loads(result['df1'])
     values['df2'] = json.loads(result['df2'])
-    values['LOC'] = json.loads(result['LOC'])
     return render(request, "tables/page_cool.html", context = values)
 
 def page_elec(request):
