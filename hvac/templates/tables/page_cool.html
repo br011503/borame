@@ -13,6 +13,8 @@
         <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.4.1/font/bootstrap-icons.css" rel="stylesheet" />
         <!-- Core theme CSS (includes Bootstrap)-->        
         <link href="{% static 'css/style.css' %}" rel="stylesheet" />
+        <!-- 차트 링크 --> 
+        <script src="https://cdn.jsdelivr.net/npm/chart.js@2.8.0"></script>
     </head>
     <body>
         <!-- Responsive navbar-->
@@ -33,18 +35,8 @@
             </div>
         </nav>
         <!-- Header-->
-        <header class="py-5">
-            <div class="container px-lg-5">
-                <div class="p-4 p-lg-5 bg-light rounded-3 text-center">
-                    <div class="m-4 m-lg-5">
-                        <h2 class="fs-4 fw-bold"> 보라매사옥 운영현황 </h2>
-                        <p class="fs-4"> 1. 가장 부하율이 작은 층 (부하율%) </p>
-                        <p class="fs-4"> 2. 가장 부하율이 작은 층 (부하율%) </p>
-                        <p class="fs-4"> 3. 가장 부하율이 작은 층 (부하율%) </p>
-                    </div>
-                </div>
-            </div>
-        </header>
+        <h2 class="fs-4 fw-bold"> </h2> <!-- 빈칸 -->
+        <!-- Page Content-->
         <section class="pt-4">
             <div class="container px-lg-5">
                 <!-- Page Features-->
@@ -55,22 +47,46 @@
                                 <div class="feature bg-primary bg-gradient text-white rounded-3 mb-4 mt-n4"><i class="bi bi-thermometer-high"></i></div>
                                 <!-- 부트스트랩 --> 
                                 <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script> <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script> <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script> 
-                                <h2 class="fs-4 fw-bold">실내냉방기 부하율 현황</h2>
+                                <h2 class="fs-4 fw-bold">냉방기 부하율 현황</h2>
                                 <!-- 차트 -->
-                                <canvas id="myChart" width="200" height="200"></canvas>
+                                <canvas id="myChart" width="200" height="400"></canvas>
                                 <script> var ctx = document.getElementById('myChart'); 
-                                  var myChart = new Chart(ctx, { type: 'Bar', 
-                                                                data: { labels: ['1', '2', '3', '4', '5', '6', '7', ], 
-                                                                       datasets: [{ label: '부하율',
-                                                                                   data: [ 1,2,3,4,5,6,7 ], 
-                                                                                   backgroundColor: ['rgba(255, 99, 132, 0.2)', 'rgba(255, 206, 86, 0.2)', 
-                                                                                                     'rgba(54, 162, 235, 0.2)', 'rgba(75, 192, 192, 0.2)', 
-                                                                                                     'rgba(255, 99, 132, 0.2)', 'rgba(255, 206, 86, 0.2)', 
-                                                                                                     'rgba(54, 162, 235, 0.2)', ], 
-                                                                                   borderColor: [ 'rgba(255, 99, 132, 1)', 'rgba(255, 206, 86, 1)', 
-                                                                                                  'rgba(54, 162, 235, 1)', 'rgba(75, 192, 192, 1)', 
-                                                                                                  'rgba(255, 99, 132, 1)', 'rgba(255, 206, 86, 1)', 
-                                                                                                  'rgba(54, 162, 235, 1)', ], borderWidth: 1 }] }, 
+                                  var myChart = new Chart(ctx, { type: 'horizontalBar', 
+                                                                data: { labels: ['{{df2.설비명.0}}', '{{df2.설비명.1}}', '{{df2.설비명.2}}', '{{df2.설비명.3}}', 
+                                                                                 '{{df2.설비명.4}}', '{{df2.설비명.5}}', '{{df2.설비명.6}}', '{{df2.설비명.7}}', 
+                                                                                 '{{df2.설비명.8}}', '{{df2.설비명.9}}', '{{df2.설비명.10}}', '{{df2.설비명.11}}', 
+                                                                                 '{{df2.설비명.12}}', '{{df2.설비명.13}}', '{{df2.설비명.14}}', '{{df2.설비명.15}}', 
+                                                                                 '{{df2.설비명.16}}', '{{df2.설비명.17}}', '{{df2.설비명.18}}', '{{df2.설비명.19}}'], 
+                                                                       datasets: [{ label: '실내온도',
+                                                                                   data: [{{df2.현재값.0}}, {{df2.현재값.1}}, {{df2.현재값.2}}, {{df2.현재값.3}}, 
+                                                                                          {{df2.현재값.4}}, {{df2.현재값.5}}, {{df2.현재값.6}}, {{df2.현재값.7}}, 
+                                                                                          {{df2.현재값.8}}, {{df2.현재값.9}}, {{df2.현재값.10}}, {{df2.현재값.11}}, 
+                                                                                          {{df2.현재값.12}}, {{df2.현재값.13}}, {{df2.현재값.14}}, {{df2.현재값.15}}, 
+                                                                                          {{df2.현재값.16}}, {{df2.현재값.17}}, {{df2.현재값.18}}, {{df2.현재값.19}}], 
+                                                                                   backgroundColor: ['rgba(255, 99, 132, 0.2)', 'rgba(255, 99, 132, 0.2)',
+                                                                                                     'rgba(255, 99, 132, 0.2)', 'rgba(255, 99, 132, 0.2)',
+                                                                                                     'rgba(255, 99, 132, 0.2)', 
+                                                                                                     'rgba(255, 206, 86, 0.2)', 'rgba(255, 206, 86, 0.2)', 
+                                                                                                     'rgba(255, 206, 86, 0.2)', 'rgba(255, 206, 86, 0.2)', 
+                                                                                                     'rgba(255, 206, 86, 0.2)', 
+                                                                                                     'rgba(54, 162, 235, 0.2)', 'rgba(54, 162, 235, 0.2)', 
+                                                                                                     'rgba(54, 162, 235, 0.2)', 'rgba(54, 162, 235, 0.2)', 
+                                                                                                     'rgba(54, 162, 235, 0.2)', 
+                                                                                                     'rgba(75, 192, 192, 0.2)', 'rgba(75, 192, 192, 0.2)', 
+                                                                                                     'rgba(75, 192, 192, 0.2)', 'rgba(75, 192, 192, 0.2)', 
+                                                                                                     'rgba(75, 192, 192, 0.2)', ], 
+                                                                                   borderColor: [ 'rgba(255, 99, 132, 1)', 'rgba(255, 99, 132, 1)', 
+                                                                                                  'rgba(255, 99, 132, 1)', 'rgba(255, 99, 132, 1)', 
+                                                                                                  'rgba(255, 99, 132, 1)',
+                                                                                                  'rgba(255, 206, 86, 1)', 'rgba(255, 206, 86, 1)',
+                                                                                                  'rgba(255, 206, 86, 1)', 'rgba(255, 206, 86, 1)',
+                                                                                                  'rgba(255, 206, 86, 1)',
+                                                                                                  'rgba(54, 162, 235, 1)', 'rgba(54, 162, 235, 1)',
+                                                                                                  'rgba(54, 162, 235, 1)', 'rgba(54, 162, 235, 1)',
+                                                                                                  'rgba(54, 162, 235, 1)',
+                                                                                                  'rgba(75, 192, 192, 1)', 'rgba(75, 192, 192, 1)', 
+                                                                                                  'rgba(75, 192, 192, 1)', 'rgba(75, 192, 192, 1)', 
+                                                                                                  'rgba(75, 192, 192, 1)', ], borderWidth: 1 }] }, 
                                                                 options: { scales: { xAxes: [{ ticks: { beginAtZero: true } }] } } }); </script>
                             </div>
                         </div>
@@ -83,6 +99,6 @@
         <!-- Bootstrap core JS-->
         <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.0/dist/js/bootstrap.bundle.min.js"></script>
         <!-- Core theme JS-->
-        <script src="{% static 'js/scripts' %}" ></script>
+        <script src="{% static 'js/scripts' %}" ></script>    
     </body>
 </html>
