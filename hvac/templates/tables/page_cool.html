@@ -20,7 +20,7 @@
         <!-- Responsive navbar-->
         <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
             <div class="container px-lg-5">
-                <a class="navbar-brand" href="#!">TSOP Web</a>
+                <a class="navbar-brand" href="{% url 'index' %}">TSOP Web</a>
                 <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation"><span class="navbar-toggler-icon"></span></button>
                 <div class="collapse navbar-collapse" id="navbarSupportedContent">
                     <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
@@ -35,7 +35,18 @@
             </div>
         </nav>
         <!-- Header-->
-        <h2 class="fs-4 fw-bold"> </h2> <!-- 빈칸 -->
+        <header class="py-5">
+            <div class="container px-lg-5">
+                <div class="p-4 p-lg-5 bg-light rounded-3 text-center">
+                    <div class="m-4 m-lg-5">
+                        <h2 class="display-3 fw-bold"> 실내 냉방기 부하율 현황 </h2>
+                        <p class="fs-2"> 1층: 부하율(40%) </p>
+                        <p class="fs-2"> 2층: 부하율(40%) </p>
+                        <p class="fs-2"> 3층: 부하율(40%) </p>
+                    </div>
+                </div>
+            </div>
+        </header>
         <!-- Page Content-->
         <section class="pt-4">
             <div class="container px-lg-5">
