@@ -35,8 +35,6 @@
             </div>
         </nav>
         <!-- Header-->
-<!--         <header class="py-5"> <!-- 빈 해더 -->
-<!--         </header> -->
         <!-- Page Content-->
         <section class="pt-4">
             <div class="container px-lg-5">
@@ -49,9 +47,8 @@
                                 <!-- 부트스트랩 --> 
                                 <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script> <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script> <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script> 
                                 <h2 class="fs-4 fw-bold">실내온도(온도가 가장 높은 20개층)</h2>
-                                <p>온도 {{df2.현재값.0}}</p>
                                 <!-- 차트 -->
-                                <canvas id="myChart" width="200" height="200"></canvas>
+                                <canvas id="myChart" width="200" height="400"></canvas>
                                 <script> var ctx = document.getElementById('myChart'); 
                                   var myChart = new Chart(ctx, { type: 'horizontalBar', 
                                                                 data: { labels: ['{{df2.설비명.0}}', '{{df2.설비명.1}}', '{{df2.설비명.2}}', '{{df2.설비명.3}}', 
