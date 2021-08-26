@@ -40,7 +40,7 @@
                         <h2 class="fs-4 fw-bold"> 보라매사옥 운영현황 </h2>
                         <p class="fs-4"> 2021-08-18 00시 00분 </p>
                         <p class="fs-4"> 부하율 블라, 여유 있는 냉방기 point 블라 </p>
-                        <p class="fs-4"> {{df1.설비명}} </p>
+                        <p class="fs-4"> {{df1.층}} </p>
                         <p class="fs-4"> {{df1.현재값}} </p>
                     </div>
                 </div>
@@ -62,8 +62,8 @@
                                 <canvas id="myChart" width="200" height="200"></canvas>
                                 <script> var ctx = document.getElementById('myChart'); 
                                   var myChart = new Chart(ctx, { type: 'Bar', 
-                                                                data: { labels: ['{{df1.설비명.0}}', '{{df1.설비명.1}}', '{{df1.설비명.2}}', '{{df1.설비명.3}}', 
-                                                                                 '{{df1.설비명.4}}', '{{df1.설비명.5}}', '{{df1.설비명.6}}',], 
+                                                                data: { labels: ['{{df1.층.0}}', '{{df1.층.1}}', '{{df1.층.2}}', '{{df1.층.3}}', 
+                                                                                 '{{df1.층.4}}', '{{df1.층.5}}', '{{df1.층.6}}',], 
                                                                        datasets: [{ label: '실내냉방기 부하율',
                                                                                    data: [{{df1.현재값.0}}, {{df1.현재값.1}}, {{df1.현재값.2}}, {{df1.현재값.3}}, 
                                                                                           {{df1.현재값.4}}, {{df1.현재값.5}}, {{df1.현재값.6}}, ], 
