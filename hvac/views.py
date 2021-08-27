@@ -75,6 +75,7 @@ def page_cool(request):
     values = json.loads(result['df1'])
     values['df1'] = json.loads(result['df1'])
     values['df2'] = json.loads(result['df2'])
+    values['text'] = json.loads(result['text'])
     return render(request, "tables/page_cool.html", context = values)
 
 def page_elec(request):
