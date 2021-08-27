@@ -39,9 +39,9 @@
                 <div class="p-4 p-lg-5 bg-light rounded-3 text-center">
                     <div class="m-4 m-lg-5">
                         <h2 class="fs-4 fw-bold"> 실내 냉방기 부하율 현황 </h2>
-                        <p class="fs-4"> 1층: 부하율(40%) </p>
-                        <p class="fs-4"> 2층: 부하율(40%) </p>
-                        <p class="fs-4"> 3층: 부하율(40%) </p>
+                        <p class="fs-4"> {{text.설비명.0}}: 부하율({{text.현재값.0}}%) </p>
+                        <p class="fs-4"> {{text.설비명.1}}: 부하율({{text.현재값.1}}%) </p>
+                        <p class="fs-4"> {{text.설비명.2}}: 부하율({{text.현재값.2}}%) </p>
                     </div>
                 </div>
             </div>
@@ -57,7 +57,7 @@
                                 <div class="feature bg-primary bg-gradient text-white rounded-3 mb-4 mt-n4"><i class="bi bi-building"></i></div>
                                 <!-- 부트스트랩 --> 
                                 <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script> <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script> <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script> 
-                                <h2 class="fs-4 fw-bold">냉방기 부하율</h2>
+                                <h2 class="fs-4 fw-bold">층별 냉방기 부하율</h2>
                                 <!-- 차트 -->
                                 <canvas id="myChart" width="200" height="200"></canvas>
                                 <script> var ctx = document.getElementById('myChart'); 
