@@ -37,9 +37,35 @@
                 <div class="p-2 p-lg-5 bg-light rounded-3 text-center">
                     <div class="m-3 m-lg-5">
                         <h2 class="fs-4 fw-bold"> 추천 열원운영조합 </h2>
-                        <p class="fs-6"> 2021-08-18 </p>
+                        <p class="fs-6"> 2021년 08월 18일 </p>
                         <p class="fs-6"> 예측 최대열량: 10092 Kcal/h </p>
-                        <p class="fs-6"> 예상 전력사용: 10092 kW/h*day </p>
+                        <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.4.0/Chart.min.js"></script>
+                            <div>
+                                <canvas id="myChart">
+                                </canvas>
+                            </div>
+                            <script>
+                                var ctx = document.getElementById('myChart').getContext('2d');
+                                var data = {
+                                    // The type of chart we want to create
+                                    type: 'line',
+                                    // The data for our dataset
+                                    data: {
+                                        labels: ["January", "February", "March", "April", "May", "June", "July"],
+                                        datasets: [{
+                                            label: "예측열량",
+                                            backgroundColor: 'rgb(255, 99, 132)',
+                                            fill:false, // line의 아래쪽을 색칠할 것인가? 
+                                            borderColor: 'rgb(255, 99, 132)',
+                                            lineTension:0.2, // 값을 높이면, line의 장력이 커짐.
+                                            data: [0, 10, 5, 2, 20, 30, 45],
+                                        }]
+                                    },
+                                    // Configuration options go here
+                                    options: {}
+                                }
+                                var chart = new Chart(ctx, data);
+                            </script>
                     </div>
                 </div>
             </div>
