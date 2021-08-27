@@ -7,6 +7,7 @@ import subprocess
 import sys
 import os
 import ssl
+from datetime import datetime, timedelta
 
 def allowSelfSignedHttps(allowed):
     # bypass the server certificate verification on client side
@@ -37,7 +38,25 @@ def index(request):
     return render(request, "tables/table1.html", context = values)
 
 def page_hvac(request):
-    return render(request, "tables/page_hvac.html")
+    allowSelfSignedHttps(True) # this line is needed if you use self-signed certificate in your scoring service.
+    data = {'param':{'date':(datetime.now() + timedelta(hours=9)).strftime('%Y-%m-%d')}}
+    body = str.encode(json.dumps(data))
+    url = 'http://52.141.0.146:80/api/v1/service/tsop-skt-borame-opthvac/score'
+    api_key = 'BUZ6X7bFowLNqM7AhFeC71C9EzyxOeXd' # Replace this with the API key for the web service
+    headers = {'Content-Type':'application/json', 'Authorization':('Bearer '+ api_key)}
+    req = urllib.request.Request(url, body, headers)
+    try:
+        response = urllib.request.urlopen(req)
+        result = response.read()
+        result = json.loads(result.decode("utf-8"))
+    except urllib.error.HTTPError as error:
+        print("The request failed with status code: " + str(error.code))
+    values = json.loads(result['result'])
+    values['index_col'] = result['index_col']
+    values['pred'] = result['pred']
+    values['meas'] = result['meas']
+    values['max_pred'] = max(values['pred'])
+    return render(request, "tables/page_hvac.html", context = values)
 
 def page_temp(request):
     allowSelfSignedHttps(True) # this line is needed if you use self-signed certificate in your scoring service.
