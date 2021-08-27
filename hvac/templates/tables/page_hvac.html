@@ -38,7 +38,6 @@
                     <div class="m-3 m-lg-5">
                         <h2 class="fs-4 fw-bold"> 냉방부하예측 (2021년 08월 18일) </h2>
                         <p class="fs-6"> 최대열량: {{max_pred}}(Kcal/h) </p>
-                        <p class="fs-6"> {{pred}} </p>
                         <p class="fs-6"> {{index_col}} </p>
                         <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.4.0/Chart.min.js"></script>
                             <div>
@@ -52,15 +51,14 @@
                                     type: 'line',
                                     // The data for our dataset
                                     data: {
-//                                         labels: {{index_col}},
-                                        labels: ["January", "February", "March", "April", "May", "June", "July"],
+                                        labels: {{index_col}},
+//                                         labels: ["January", "February", "March", "April", "May", "June", "July"],
                                         datasets: [{
                                             label: "예측열량",
                                             backgroundColor: 'rgb(255, 99, 132)',
                                             fill:false, // line의 아래쪽을 색칠할 것인가? 
                                             borderColor: 'rgb(255, 99, 132)',
                                             lineTension:0.2, // 값을 높이면, line의 장력이 커짐.
-//                                             data: [0, 10, 5, 2, 20, 30, 45],
                                             data: {{pred}},
                                         }]
                                     },
