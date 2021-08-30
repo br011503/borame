@@ -10,5 +10,5 @@ urlpatterns = [ url(r'^$', views.index, name='index'),
                 url('cool/', views.page_cool, name='page_cool'), 
                 url('elec/', views.page_elec, name='page_elec'), 
                 url('peak/', views.page_peak, name='page_peak'), 
-                url('occpancy/', views.page_occpancy, name='page_occpancy'),
+                url('occupancy/', views.page_occupancy, name='page_occupancy'),
               ] + static(settings.STATIC_URL, document_root=settings.STATIC_ROOT)
