@@ -104,3 +104,6 @@ def page_elec(request):
 
 def page_peak(request):
     return render(request, "tables/page_peak.html")
+
+def page_occupancy(request):
+    return render(request, "tables/page_occupancy.html")
