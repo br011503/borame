@@ -36,7 +36,7 @@
             <div class="container px-lg-5">
                 <div class="p-2 p-lg-5 bg-light rounded-3 text-center">
                     <div class="m-3 m-lg-5">
-                        <h2 class="fs-4 fw-bold"> 냉방부하예측 (2021년 08월 18일) </h2>
+                        <h2 class="fs-4 fw-bold"> 냉방부하예측 (time) </h2>
                         <p class="fs-6"> 최대열량: {{max_pred}}(Kcal/h) </p>
                         <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.4.0/Chart.min.js"></script>
                             <div>
@@ -51,7 +51,8 @@
                                     // The data for our dataset
                                     data: {
 //                                         labels: {{index_col}},
-                                        labels: ["01", "02", "03", "04", "05", "06", "07", "08", "09", "10", "11", "13", "14", "15", "16", "17", "18", "19", "20",],
+                                        labels: ["00시", "01시", "02시", "03시", "04시", "05시", "06시", "07시", "08시", "09시", "10시", "11시", "12시",
+                                                 "13시", "14시", "15시", "16시", "17시", "18시", "19시", "20시",],
                                         datasets: [{
                                             label: "예측열량",
                                             backgroundColor: 'rgb(255, 99, 132)',
@@ -92,45 +93,45 @@
                                   <tbody>
                                     <tr>
                                       <th scope="row">터보1</th>
-                                      <td>ON</td>
-                                      <td>95(%)</td>
-                                      <td>95(%)</td>
+                                      <td>opt_out.냉동기.0</td>
+                                      <td>opt_out.냉수펌프.0</td>
+                                      <td>opt_out.냉각수펌프.0</td>
                                     </tr>
                                     <tr>
                                       <th scope="row">터보2</th>
-                                      <td>ON</td>
-                                      <td>95(%)</td>
-                                      <td>95(%)</td>
+                                      <td>opt_out.냉동기.1</td>
+                                      <td>opt_out.냉수펌프.1</td>
+                                      <td>opt_out.냉각수펌프.1</td>
                                     </tr>
                                     <tr>
                                       <th scope="row">터보3</th>
-                                      <td>OFF</td>
-                                      <td>0(%)</td>
-                                      <td>0(%)</td>
+                                      <td>opt_out.냉동기.2</td>
+                                      <td>opt_out.냉수펌프.2</td>
+                                      <td>opt_out.냉각수펌프.2</td>
                                     </tr>
                                       <tr>
                                       <th scope="row">터보4</th>
-                                      <td>ON</td>
-                                      <td>95(%)</td>
-                                      <td>95(%)</td>
+                                      <td>opt_out.냉동기.3</td>
+                                      <td>opt_out.냉수펌프.3</td>
+                                      <td>opt_out.냉각수펌프.3</td>
                                     </tr>
                                     <tr>
                                       <th scope="row">터보5</th>
-                                      <td>OFF</td>
-                                      <td>0(%)</td>
-                                      <td>0(%)</td>
+                                      <td>opt_out.냉동기.4</td>
+                                      <td>opt_out.냉수펌프.4</td>
+                                      <td>opt_out.냉각수펌프.4</td>
                                     </tr>
                                     <tr>
                                       <th scope="row">터보6</th>
-                                      <td>OFF</td>
-                                      <td>0(%)</td>
-                                      <td>0(%)</td>
+                                      <td>opt_out.냉동기.5</td>
+                                      <td>opt_out.냉수펌프.5</td>
+                                      <td>opt_out.냉각수펌프.5</td>
                                     </tr>
                                     <tr>
                                       <th scope="row">터보7</th>
-                                      <td>OFF</td>
-                                      <td>0(%)</td>
-                                      <td>0(%)</td>
+                                      <td>opt_out.냉동기.6</td>
+                                      <td>opt_out.냉수펌프.6</td>
+                                      <td>opt_out.냉각수펌프.6</td>
                                     </tr>
                                   </tbody>
                                 </table>
