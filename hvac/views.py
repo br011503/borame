@@ -57,7 +57,7 @@ def page_hvac(request):
     values['meas'] = result['meas']
     values['max_pred'] = max(values['pred'])
     values['time'] = result['time']
-    values = json.loads(result['opt_out'])
+    values['opt_out'] = json.loads(result['opt_out'])
     return render(request, "tables/page_hvac.html", context = values)
 
 def page_temp(request):
