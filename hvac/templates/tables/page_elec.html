@@ -71,7 +71,7 @@
                                       datasets: [ 
                                         { 
                                           label: "전력량kW",
-                                          data: [ {% for i in df2.전력량 %}{{ i }}, {% endfor %} ], 
+                                          data: [ {% for j in df2.전력량 %}{{ j }}, {% endfor %} ], 
                                           backgroundColor: [
                                             "rgba(255, 99, 132, 0.2)",
                                           ],
@@ -83,7 +83,7 @@
                                         },
                                         { fill:false,
                                           label: "Peak(kW)",
-                                          data: [ {% for i in df2.peak %}{{ i }}, {% endfor %} ], 
+                                          data: [ {% for k in df2.peak %}{{ k }}, {% endfor %} ], 
                                           backgroundColor: [
                                             "rgba(255, 99, 132, 0.2)",
                                           ],
