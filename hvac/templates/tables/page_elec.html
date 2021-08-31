@@ -65,7 +65,7 @@
                                   var myChart = new Chart(ctx, {
                                     type: "line",
                                     data: {
-                                      labels: [ {% for i in df2.시간 %}{{ i }}, {% endfor %} ],
+                                      labels: [ {% for i in df2_index %}{{ i }}, {% endfor %} ],
                                       datasets: [ 
                                         { 
                                           label: "전력량kW",
