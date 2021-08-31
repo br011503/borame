@@ -118,6 +118,9 @@ def page_elec(request):
     values['df2'] = json.loads(result['df2'])
     values['df3'] = json.loads(result['df3'])
     values['df5'] = json.loads(result['df5'])
+    values['df2_index'] = list(values['df2']['시간'].values())
+    values['df2_elec'] = list(values['df2']['전력량'].values())
+    values['df2_peak'] = list(values['df2']['peak'].values())
     return render(request, "tables/page_elec.html", context = values)
 
 def page_peak(request):
