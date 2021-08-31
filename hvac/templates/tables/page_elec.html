@@ -67,11 +67,13 @@
                                   var myChart = new Chart(ctx, {
                                     type: "line",
                                     data: {
-                                      labels: [{% for i in df2.이벤트일시 %}{{% i %}}, {% endfor %}],
+                                      labels: [{{df2.이벤트일시.84}}, {{df2.이벤트일시.85}}, {{df2.이벤트일시.86}}, {{df2.이벤트일시.87}}, 
+                                               {{df2.이벤트일시.88}}, {{df2.이벤트일시.89}}, {{df2.이벤트일시.90}}, {{df2.이벤트일시.91}}, 
+                                               {{df2.이벤트일시.92}}, {{df2.이벤트일시.93}}, {{df2.이벤트일시.94}}, {{df2.이벤트일시.95}}, ],
                                       datasets: [ 
                                         { 
                                           label: "전력량kW",
-                                          data: {{df2_elec}}, 
+                                          data: {{df2_elec[-12:]}}, 
                                           backgroundColor: [
                                             "rgba(255, 99, 132, 0.2)",
                                           ],
