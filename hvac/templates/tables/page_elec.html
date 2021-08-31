@@ -41,7 +41,7 @@
                         <p class="fs-6"> 요금제: {{df1.요금제.0}} </p>
                         <p class="fs-6"> Peak전력: {{df1.요금적용전력.0}}kWh </p>
                         <p class="fs-6"> 이번달 오늘까지 누적 사용량 : {{df1.누적사용량.0}} MWh </p>
-                        <p class="fs-6"> [ {{df2_index}} ] </p>
+                        <p class="fs-6"> {{df2_index}} </p>
                     </div>
                 </div>
             </div>
@@ -65,7 +65,7 @@
                                   var myChart = new Chart(ctx, {
                                     type: "line",
                                     data: {
-                                      labels: {{df2_index}},
+                                      labels: [ {% for i in df2_index %}{{ i }}, {% endfor %} ],
 //                                       labels: [1,2,3,4,5,6,7,8,9,0,1,2],
                                       datasets: [ 
                                         { 
