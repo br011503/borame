@@ -42,8 +42,8 @@
                         <p class="fs-6"> Peak전력: {{df1.요금적용전력.0}}kWh </p>
                         <p class="fs-6"> 이번달 오늘까지 누적 사용량 : {{df1.누적사용량.0}} MWh </p>
                         
-                        <p class="fs-6"> [ {% for j in df2.전력량 %}{{ df2.전력량.j }}, {% endfor %} ] </p>
-                        <p class="fs-6"> [ {{df2.시간}} ] </p>
+                        <p class="fs-6"> [ {% for i in df2.전력량 %}{{ df2.전력량.i }}, {% endfor %} ] </p>
+                        <p class="fs-6"> [ {{df2.시간.0}}, {{df2.시간.1}} ] </p>
                     </div>
                 </div>
             </div>
@@ -84,7 +84,7 @@
                                         },
                                         { fill:false,
                                           label: "Peak(kW)",
-                                          data: [ {{df2.peak }} ], 
+                                          data: [ {{ df2.peak.0 }}, {{ df2.peak.1 }} ], 
                                           backgroundColor: [
                                             "rgba(54, 162, 235, 0.2)",
                                           ],
