@@ -118,12 +118,6 @@ def page_elec(request):
     values['df2'] = json.loads(result['df2'])
     values['df3'] = json.loads(result['df3'])
     values['df5'] = json.loads(result['df5'])
-    values['df2_index'] = list(values['df2']['이벤트일시'].values())
-    values['df2_elec'] = list(values['df2']['전력량'].values())[-12:]
-    values['df2_peak'] = list(values['df2']['peak'].values())
-    values['df3_index'] = list(values['df3']['이벤트일시'].values())
-    values['df3_elec'] = list(values['df3']['전력량'].values())
-    values['df3_hvac'] = list(values['df3']['hvac'].values())
     return render(request, "tables/page_elec.html", context = values)
 
 def page_peak(request):
