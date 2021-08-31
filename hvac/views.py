@@ -115,13 +115,15 @@ def page_elec(request):
         print("The request failed with status code: " + str(error.code))
     values = json.loads(result['df1'])
     values['df1'] = json.loads(result['df1'])
-    values['df2_index'] = result['df2_index']
-    values['df2_peak'] = result['df2_peak']
-    values['df2_elec'] = result['df2_elec']
-    values['df3_index'] = result['df3_index']
-    values['df3_hvac'] = result['df3_hvac']
-    values['df3_elec'] = result['df3_elec']
-    values['df5'] = result['df5']
+    values['df2'] = json.loads(result['df2'])
+    values['df3'] = json.loads(result['df3'])
+    values['df5'] = json.loads(result['df5'])
+    values['df2_index'] = list(values['df2']['이벤트일시'].values())
+    values['df2_elec'] = list(values['df2']['전력량'].values())
+    values['df2_peak'] = list(values['df2']['peak'].values())
+    values['df3_index'] = list(values['df3']['이벤트일시'].values())
+    values['df3_elec'] = list(values['df3']['전력량'].values())
+    values['df3_hvac'] = list(values['df3']['hvac'].values())
     return render(request, "tables/page_elec.html", context = values)
 
 def page_peak(request):
