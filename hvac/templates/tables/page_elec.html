@@ -37,10 +37,10 @@
             <div class="container px-lg-5">
                 <div class="p-2 p-lg-5 bg-light rounded-3 text-center">
                     <div class="m-3 m-lg-5">
-                        <h2 class="fs-4 fw-bold"> 보라매사옥 08월 전력사용 현황 </h2>
-                        <p class="fs-4"> 고객번호: 00000   |   고객명: 일반A </p>
-                        <p class="fs-4"> 요금제: 00000000  |   Peak전력: 000 kWh </p>
-                        <p class="fs-4"> 이번달 1일부터 00일까지 누적 사용량 : 000 MW/h </p>
+                        <h2 class="fs-4 fw-bold"> 보라매사옥 {{df1.월.0}}월 전력사용 현황 </h2>
+                        <p class="fs-4"> 고객번호: {{df1.고객번호.0}}, 고객명: {{df1.고객명.0}} </p>
+                        <p class="fs-4"> 요금제: {{df1.요금제.0}}, Peak전력: {{df1.요금적용전력.0}}kWh </p>
+                        <p class="fs-4"> 이번달 오늘까지 누적 사용량 : {{df1.누적사용량.0}} MWh </p>
                     </div>
                 </div>
             </div>
