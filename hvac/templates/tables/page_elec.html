@@ -42,7 +42,6 @@
                         <p class="fs-6"> Peak전력: {{df1.요금적용전력.0}}kWh </p>
                         <p class="fs-6"> 이번달 오늘까지 누적 사용량 : {{df1.누적사용량.0}} MWh </p>
                         <p class="fs-6"> {{df2_index}} </p>
-                        <p class="fs-6"> [ {% for i in df2_index %}{{ i }}, {% endfor %} ] </p>
                     </div>
                 </div>
             </div>
@@ -55,7 +54,7 @@
                     <div class="col-lg-6 col-xxl-4 mb-5">
                         <div class="card bg-light border-0 h-100">
                             <div class="card-body text-center p-4 p-lg-5 pt-0 pt-lg-0">
-                                <div class="feature bg-primary bg-gradient text-white rounded-3 mb-4 mt-n4"><i class="bi bi-lightning-charge"></i></div>
+                                <div class="feature bg-primary bg-gradient text-white rounded-3 mb-4 mt-n4"><i class="bi bi-graph-up"></i></div>
                                 <h2 class="fs-4 fw-bold">최근 3시간 전력사용 현황 </h2>
                                 <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.4.0/Chart.min.js"></script>
                                 <div>
@@ -66,8 +65,8 @@
                                   var myChart = new Chart(ctx, {
                                     type: "line",
                                     data: {
-//                                       labels: [ {% for i in df2_index %}{{ i }}, {% endfor %} ],
-                                      labels: [1,2,3,4,5,6,7,8,9,0,1,2],
+                                      labels: {{df2_index}},
+//                                       labels: [1,2,3,4,5,6,7,8,9,0,1,2],
                                       datasets: [ 
                                         { 
                                           label: "전력량kW",
@@ -118,8 +117,8 @@
                     <div class="col-lg-6 col-xxl-4 mb-5">
                         <div class="card bg-light border-0 h-100">
                             <div class="card-body text-center p-4 p-lg-5 pt-0 pt-lg-0">
-                                <div class="feature bg-primary bg-gradient text-white rounded-3 mb-4 mt-n4"><i class="bi bi-lightning-charge"></i></div>
-                                <h2 class="fs-4 fw-bold">최근 1개월 전력사용 현황</h2>
+                                <div class="feature bg-primary bg-gradient text-white rounded-3 mb-4 mt-n4"><i class="bi bi-wallet2"></i></div>
+                                <h2 class="fs-4 fw-bold">최근 6개월 전력요금</h2>
                                 <p class="mb-0"> HVAC 사용량 포함 AREA차트 </p>
                             </div>
                         </div>
@@ -130,7 +129,7 @@
                     <div class="col-lg-6 col-xxl-4 mb-5">
                         <div class="card bg-light border-0 h-100">
                             <div class="card-body text-center p-4 p-lg-5 pt-0 pt-lg-0">
-                                <div class="feature bg-primary bg-gradient text-white rounded-3 mb-4 mt-n4"><i class="bi bi-lightning-charge"></i></div>
+                                <div class="feature bg-primary bg-gradient text-white rounded-3 mb-4 mt-n4"><i class="bi bi-pie-chart"></i></div>
                                 <h2 class="fs-4 fw-bold">용도별 전력사용량</h2>
                                 <p class="fs-6"> 이번달 HVAC 사용전력(MWh) </p>
                                 <canvas id="chDonut1"></canvas> 
