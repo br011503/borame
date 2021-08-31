@@ -100,7 +100,29 @@ def page_cool(request):
     return render(request, "tables/page_cool.html", context = values)
 
 def page_elec(request):
-    return render(request, "tables/page_elec.html")
+    allowSelfSignedHttps(True) # this line is needed if you use self-signed certificate in your scoring service.
+    data = {'param': {'bld': '1' }}
+    body = str.encode(json.dumps(data))
+    url = 'http://52.141.0.146:80/api/v1/service/tsop-skt-borame-elec/score'
+    api_key = 'NogOkGsn8WcVNLfhuDFc6vYNPumr0K0w' # Replace this with the API key for the web service
+    headers = {'Content-Type':'application/json', 'Authorization':('Bearer '+ api_key)}
+    req = urllib.request.Request(url, body, headers)
+    try:
+        response = urllib.request.urlopen(req)
+        result = response.read()
+        result = json.loads(result.decode("utf-8"))
+    except urllib.error.HTTPError as error:
+        print("The request failed with status code: " + str(error.code))
+    values = json.loads(result['df1'])
+    values['df1'] = json.loads(result['df1'])
+    values['df2_index'] = result['df2_index']
+    values['df2_peak'] = result['df2_peak']
+    values['df2_elec'] = result['df2_elec']
+    values['df3_index'] = result['df3_index']
+    values['df3_hvac'] = result['df3_hvac']
+    values['df3_elec'] = result['df3_elec']
+    values['df5'] = result['df5']
+    return render(request, "tables/page_elec.html", context = values)
 
 def page_peak(request):
     return render(request, "tables/page_peak.html")
