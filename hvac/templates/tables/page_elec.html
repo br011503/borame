@@ -41,9 +41,7 @@
                         <p class="fs-6"> 요금제: {{df1.요금제.0}} </p>
                         <p class="fs-6"> Peak전력: {{df1.요금적용전력.0}}kWh </p>
                         <p class="fs-6"> 이번달 오늘까지 누적 사용량 : {{df1.누적사용량.0}} MWh </p>
-                        <p class="fs-6"> [ {% for i in df2_elec %}{{ df2_elec.i }}, {% endfor %} ] </p>
-                        <p class="fs-6"> [ {% for i in df2_index %}{{ df2_index.i }}, {% endfor %} ] </p>
-                        <p class="fs-6"> [ {{df2.시간.0}}, {{df2.시간.1}} ] </p>
+                        <p class="fs-6"> [ {% for i in df2_elec %}{{ i }}, {% endfor %} ] </p>
                     </div>
                 </div>
             </div>
@@ -71,7 +69,7 @@
                                       datasets: [ 
                                         { 
                                           label: "전력량kW",
-                                          data: [ df2_elec ], 
+                                          data: [ {{df2_elec}} ], 
                                           backgroundColor: [
                                             "rgba(255, 99, 132, 0.2)",
                                           ],
@@ -83,7 +81,7 @@
                                         },
                                         { fill:false,
                                           label: "Peak(kW)",
-                                          data: [ {{ df2.peak.0 }}, {{ df2.peak.1 }} ], 
+                                          data: [ {{ df2_peak }} ], 
                                           backgroundColor: [
                                             "rgba(54, 162, 235, 0.2)",
                                           ],
