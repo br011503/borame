@@ -59,7 +59,6 @@
                                 <div class="feature bg-primary bg-gradient text-white rounded-3 mb-4 mt-n4"><i class="bi bi-lightning-charge"></i></div>
                                 <h2 class="fs-4 fw-bold">최근 3시간 전력사용 현황 </h2>
                                 <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.4.0/Chart.min.js"></script>
-                                <script src="https://unpkg.com/vue-chartjs/dist/vue-chartjs.min.js"></script>
                                 <div>
                                   <canvas id="myChart" width="200" height="150"></canvas>
                                 </div>
@@ -72,7 +71,7 @@
                                       datasets: [ 
                                         { 
                                           label: "전력량kW",
-                                          data: [ {% for i in df2.시간 %}{{ df2.전력량.i }}, {% endfor %} ], 
+                                          data: [ df2_elec ], 
                                           backgroundColor: [
                                             "rgba(255, 99, 132, 0.2)",
                                           ],
