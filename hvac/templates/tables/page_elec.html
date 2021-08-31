@@ -67,7 +67,7 @@
                                   var myChart = new Chart(ctx, {
                                     type: "line",
                                     data: {
-                                      labels: [{% for i in df2.이벤트일시 %}, {% endfor %}],
+                                      labels: [{% for i in df2.이벤트일시 %}{% i %}, {% endfor %}],
                                       datasets: [
                                         {
                                           label: "전력량kW",
