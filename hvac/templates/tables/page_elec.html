@@ -65,7 +65,8 @@
                                   var myChart = new Chart(ctx, {
                                     type: "line",
                                     data: {
-                                      labels: [ 1,2,3,4,5,6,7,8,9,10,11,12 ],
+                                      labels: [{% for label in df2_index %} {{ label }}, {% endfor %}],
+//                                       labels: [1,2,3,4,5,6,7,8,9,0,1,2],
                                       datasets: [ 
                                         { 
                                           label: "전력량kW",
