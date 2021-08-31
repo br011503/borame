@@ -41,12 +41,9 @@
                         <p class="fs-6"> 요금제: {{df1.요금제.0}} </p>
                         <p class="fs-6"> Peak전력: {{df1.요금적용전력.0}}kWh </p>
                         <p class="fs-6"> 이번달 오늘까지 누적 사용량 : {{df1.누적사용량.0}} MWh </p>
-                        <p class="fs-6"> [ {% for i in df2.시간 %}{{ i.시간 }}, {% endfor %} ] </p>
-                        <p class="fs-6"> [ {% for j in df2.전력량 %}{{ i.df2.전력량.j }}, {% endfor %} ] </p>
-                        <p class="fs-6"> [ {% for k in df2.peak %}{{ i.peak.k }}, {% endfor %} ] </p>
-                        <p class="fs-6"> [ {df2.시간} ] </p>
-                        <p class="fs-6"> [ df2.전력량 ] </p>
-                        <p class="fs-6"> [ df2.peak ] </p>
+                        
+                        <p class="fs-6"> [ {% for j in df2.전력량 %}{{ df2.전력량.j }}, {% endfor %} ] </p>
+                        <p class="fs-6"> [ {{df2.시간}} ] </p>
                     </div>
                 </div>
             </div>
@@ -75,7 +72,7 @@
                                       datasets: [ 
                                         { 
                                           label: "전력량kW",
-                                          data: [ {% for j in df2.전력량 %}{{ df2.전력량.j }}, {% endfor %} ], 
+                                          data: [ {{df2.전력량 }} ], 
                                           backgroundColor: [
                                             "rgba(255, 99, 132, 0.2)",
                                           ],
@@ -87,7 +84,7 @@
                                         },
                                         { fill:false,
                                           label: "Peak(kW)",
-                                          data: [ {% for k in df2.peak %}{{ df2.peak.k }}, {% endfor %} ], 
+                                          data: [ {{df2.peak }} ], 
                                           backgroundColor: [
                                             "rgba(54, 162, 235, 0.2)",
                                           ],
