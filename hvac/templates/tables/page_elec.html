@@ -68,8 +68,8 @@
                                     type: "line",
                                     data: {
                                       labels: [{% for i in df2.이벤트일시 %}{% i %}, {% endfor %}],
-                                      datasets: [
-                                        {
+                                      datasets: [ 
+                                        { 
                                           label: "전력량kW",
                                           data: {{df2_elec}}, 
                                           backgroundColor: [
@@ -81,7 +81,7 @@
                                           lineTension:0.3,
                                           borderWidth: 1,
                                         },
-                                        {
+                                        { fill:false,
                                           label: "Peak(kW)",
                                           data: {{df2_peak}}, 
                                           backgroundColor: [
