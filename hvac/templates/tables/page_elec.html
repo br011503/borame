@@ -70,11 +70,11 @@
                                   var myChart = new Chart(ctx, {
                                     type: "line",
                                     data: {
-                                      labels: [ {% for i in df2.시간 %}{{ i }}, {% endfor %} ],
+                                      labels: [ {% for i in df2.시간 %}{{ df2.시간.i }}, {% endfor %} ],
                                       datasets: [ 
                                         { 
                                           label: "전력량kW",
-                                          data: [ {% for j in df2.전력량 %}{{ j }}, {% endfor %} ], 
+                                          data: [ {% for j in df2.전력량 %}{{ df2.전력량.j }}, {% endfor %} ], 
                                           backgroundColor: [
                                             "rgba(255, 99, 132, 0.2)",
                                           ],
@@ -86,7 +86,7 @@
                                         },
                                         { fill:false,
                                           label: "Peak(kW)",
-                                          data: [ {% for k in df2.peak %}{{ k }}, {% endfor %} ], 
+                                          data: [ {% for k in df2.peak %}{{ df2.peak.k }}, {% endfor %} ], 
                                           backgroundColor: [
                                             "rgba(255, 99, 132, 0.2)",
                                           ],
