@@ -70,24 +70,12 @@
                                         { 
                                           label: "전력량kW",
                                           data: [ {% for i in df2_elec %}{{ i }}, {% endfor %} ], 
-                                          backgroundColor: [
-                                            "rgba(255, 99, 132, 0.2)",
-                                          ],
-                                          borderColor: [
-                                            "rgba(255, 99, 132, 1)",
-                                          ],
                                           lineTension:0.3,
                                           borderWidth: 1,
                                         },
                                         { fill:false,
                                           label: "Peak(kW)",
                                           data: [ {% for i in df2_peak %}{{ i }}, {% endfor %} ], 
-                                          backgroundColor: [
-                                            "rgba(54, 162, 235, 0.2)",
-                                          ],
-                                          borderColor: [
-                                            "rgba(54, 162, 235, 1)",
-                                          ],
                                           lineTension:0.3,
                                           borderWidth: 1,
                                         },
