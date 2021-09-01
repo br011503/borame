@@ -106,8 +106,55 @@
                         <div class="card bg-light border-0 h-100">
                             <div class="card-body text-center p-4 p-lg-5 pt-0 pt-lg-0">
                                 <div class="feature bg-primary bg-gradient text-white rounded-3 mb-4 mt-n4"><i class="bi bi-wallet2"></i></div>
-                                <h2 class="fs-4 fw-bold">최근 6개월 전력요금</h2>
-                                <p class="mb-0"> HVAC 사용량 포함 AREA차트 </p>
+                                <h2 class="fs-4 fw-bold">최근 12개월 전력요금</h2>
+                                <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.4.0/Chart.min.js"></script>
+                                <div>
+                                  <canvas id="myChart4"></canvas>
+                                </div>
+                                <script>
+                                var ctx = document.getElementById("myChart4").getContext('2d');
+                                var myChart = new Chart(ctx, {
+                                  type: 'bar',
+                                  data: {
+                                    labels: [ {% for i in df6.청구년월 %}'{{ i }}', {% endfor %} ],
+                                    datasets: [{
+                                      label: '기본요금(백만원)',
+                                      backgroundColor: "#f4ac1a",
+                                      data: [ {% for i in df6.기본요금 %}'{{ i }}', {% endfor %} ],
+                                    }, {
+                                      label: '전력사용요금(백만원)',
+                                      backgroundColor: "#0040ff",
+                                      data: [ {% for i in df6.전력사용요금 %}'{{ i }}', {% endfor %} ],
+                                    }, ],
+                                  },
+                                options: {
+                                    tooltips: {
+                                      displayColors: true,
+                                      callbacks:{
+
+                                      },
+                                    },
+                                    scales: {
+                                      xAxes: [{
+                                        stacked: true,
+                                        gridLines: {
+                                          display: false,
+                                        }
+                                      }],
+                                      yAxes: [{
+                                        stacked: true,
+                                        ticks: {
+                                          beginAtZero: true,
+                                        },
+                                        type: 'linear',
+                                      }]
+                                    },
+                                    responsive: true,
+                                    maintainAspectRatio: false,
+                                    legend: { position: 'bottom' },
+                                  }
+                                });
+                                </script>
                             </div>
                         </div>
                     </div>
