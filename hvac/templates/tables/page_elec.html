@@ -116,15 +116,15 @@
                                 var myChart = new Chart(ctx, {
                                   type: 'bar',
                                   data: {
-                                    labels: [ {% for i in df6.청구년월 %}'{{ i }}', {% endfor %} ],
+                                    labels: [ {% for i in df6_index %}'{{ i }}', {% endfor %} ],
                                     datasets: [{
                                       label: '기본요금(백만원)',
                                       backgroundColor: "#f4ac1a",
-                                      data: [ {% for i in df6.기본요금 %}'{{ i }}', {% endfor %} ],
+                                      data: [ {% for i in df6_val1 %}'{{ i }}', {% endfor %} ],
                                     }, {
                                       label: '전력사용요금(백만원)',
                                       backgroundColor: "#0040ff",
-                                      data: [ {% for i in df6.전력사용요금 %}'{{ i }}', {% endfor %} ],
+                                      data: [ {% for i in df6_val2 %}'{{ i }}', {% endfor %} ],
                                     }, ],
                                   },
                                 options: {
