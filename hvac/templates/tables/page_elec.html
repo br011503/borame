@@ -64,9 +64,11 @@
                                   var myChart = new Chart(ctx, {
                                     type: "line",
                                     data: {
-                                      labels: [ '{{df2_index.0}}', '{{df2_index.1}}', '{{df2_index.2}}', '{{df2_index.3}}', 
-                                                '{{df2_index.4}}', '{{df2_index.5}}', '{{df2_index.6}}', '{{df2_index.7}}', 
-                                                '{{df2_index.8}}', '{{df2_index.9}}', '{{df2_index.10}}', '{{df2_index.11}}', ],
+//                                       labels: [ '{{df2_index.0}}', '{{df2_index.1}}', '{{df2_index.2}}', '{{df2_index.3}}', 
+//                                                 '{{df2_index.4}}', '{{df2_index.5}}', '{{df2_index.6}}', '{{df2_index.7}}', 
+//                                                 '{{df2_index.8}}', '{{df2_index.9}}', '{{df2_index.10}}', '{{df2_index.11}}', ],
+                                          labels: [ {% for i in df2_index %}'{{ i }}', {% endfor %} ],
+
                                       datasets: [ 
                                         { 
                                           label: "전력량kW",
