@@ -122,6 +122,9 @@ def page_elec(request):
     values['df2_index'] = list(values['df2']['시간'].values())
     values['df2_elec'] = list(values['df2']['전력량'].values())
     values['df2_peak'] = list(values['df2']['peak'].values())
+    values['df6_index'] = list(values['df6']['청구년월'].values())
+    values['df6_val1'] = list(values['df6']['기본요금'].values())
+    values['df6_val2'] = list(values['df6']['전력사용요금'].values())
     return render(request, "tables/page_elec.html", context = values)
 
 def page_peak(request):
