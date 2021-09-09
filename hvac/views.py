@@ -38,19 +38,41 @@ def index(request):
     return render(request, "tables/table1.html", context = values)
 
 def page_hvac(request):
-    allowSelfSignedHttps(True) # this line is needed if you use self-signed certificate in your scoring service.
-    data = {'param':{'date':(datetime.now() + timedelta(hours=9)).strftime('%Y-%m-%d')}}
-    body = str.encode(json.dumps(data))
-    url = 'http://52.141.0.146:80/api/v1/service/tsop-skt-borame-opthvac/score'
-    api_key = 'BUZ6X7bFowLNqM7AhFeC71C9EzyxOeXd' # Replace this with the API key for the web service
-    headers = {'Content-Type':'application/json', 'Authorization':('Bearer '+ api_key)}
-    req = urllib.request.Request(url, body, headers)
-    try:
-        response = urllib.request.urlopen(req)
-        result = response.read()
-        result = json.loads(result.decode("utf-8"))
-    except urllib.error.HTTPError as error:
-        print("The request failed with status code: " + str(error.code))
+#     allowSelfSignedHttps(True) # this line is needed if you use self-signed certificate in your scoring service.
+#     data = {'param':{'date':(datetime.now() + timedelta(hours=9)).strftime('%Y-%m-%d')}}
+#     body = str.encode(json.dumps(data))
+#     url = 'http://52.141.0.146:80/api/v1/service/tsop-skt-borame-opthvac/score'
+#     api_key = 'BUZ6X7bFowLNqM7AhFeC71C9EzyxOeXd' # Replace this with the API key for the web service
+#     headers = {'Content-Type':'application/json', 'Authorization':('Bearer '+ api_key)}
+#     req = urllib.request.Request(url, body, headers)
+#     try:
+#         response = urllib.request.urlopen(req)
+#         result = response.read()
+#         result = json.loads(result.decode("utf-8"))
+#     except urllib.error.HTTPError as error:
+#         print("The request failed with status code: " + str(error.code))
+    # 모델스토리지 연결
+    blob_storage_account = 'hvacstorage'
+    blob_storage_container = 'borame-loadpred'
+    blob_storage_key = 'jnJ3rPaeF08fafa0iP9NDbit7Flu92P57iOcm3IRsMDmdl88rYzIY7i7igZ+727gyvw+RYa9QT6ZFEeEZCSQ3w=='
+
+    permission = ContainerSasPermissions(read=True, write=True, 
+                                            delete=True, list=True, 
+                                            delete_previous_version=True, 
+                                            tag=True)
+    sas_token = generate_container_sas(account_name=blob_storage_account,
+                                        container_name=blob_storage_container,
+                                        account_key=blob_storage_key,
+                                        permission=permission,
+                                        expiry='2025-02-24T15:33:13Z')
+
+    url = "https://"+blob_storage_account+".blob.core.windows.net/"+blob_storage_container
+    container_client = ContainerClient.from_container_url(container_url=url, credential=sas_token)
+
+    # 스토리지 파일 저장 result.json 이름으로...
+    blob_client = container_client.get_blob_client("result.json")
+    streamdownloader = blob_client.download_blob()
+    result = json.loads(streamdownloader.readall())
     values = json.loads(result['result'])
     values['index_col'] = result['index_col']
     values['pred'] = result['pred']
