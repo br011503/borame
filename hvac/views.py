@@ -8,6 +8,7 @@ import sys
 import os
 import ssl
 from datetime import datetime, timedelta
+from azure.storage.blob import BlobServiceClient, generate_container_sas, ContainerSasPermissions, ContainerClient
 
 def allowSelfSignedHttps(allowed):
     # bypass the server certificate verification on client side
