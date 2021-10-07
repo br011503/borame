@@ -80,8 +80,8 @@
                             <div class="card-body text-center p-4 p-lg-5 pt-0 pt-lg-0">
                                 <div class="feature bg-primary bg-gradient text-white rounded-3 mb-4 mt-n4"><i class="bi bi-graph-up"></i></div>
                                 <h2 class="fs-4 fw-bold">장비 여유율</h2>
-                                <p class="fs-5"> 냉방부하 여유율: {{capa_r}}%({{capa_s}}USRT) </p>
-                                <p class="fs-5"> 현재장비 가동율: {{capa_r}}%({{capa_s}}USRT) </p>
+                                <p class="fs-5"> 냉방부하 여유율: {{capa_r}}% ({{capa_s}} USRT) </p>
+                                <p class="fs-5"> 현재장비 가동율: {{cool_r}}% ({{cool_s}} USRT) </p>
                             </div>
                         </div>
                     </div>
@@ -112,73 +112,73 @@
                                   <tbody>
                                     <tr>
                                       <th scope="row">터보1</th>
-                                      <td>{{df3.상태.0}}</td>
+                                      <td><span style="background: linear-gradient(to top, {{df3.색상.0}}, transparent 50%)">{{df3.상태.0}}</span></td>
                                       <td>{{df3.냉수공급.0}}</td>
                                       <td>{{df3.냉수환수.0}}</td>
                                       <td>{{df3.온도차.0}}</td>
-                                      <td>{{온도}}</td>
-                                      <td>{{온도}}</td>
-                                      <td>{{온도}}</td>
+                                      <td>{{df3.냉각수공급.0}}</td>
+                                      <td>{{df3.냉각수환수.0}}</td>
+                                      <td>{{df3.냉각수온도차.0}}</td>
                                     </tr>
                                     <tr>
                                       <th scope="row">터보2</th>
-                                      <td>{{df3.상태.1}}</td>
+                                      <td><span style="background: linear-gradient(to top, {{df3.색상.1}}, transparent 50%)">{{df3.상태.1}}</span></td>
                                       <td>{{df3.냉수공급.1}}</td>
                                       <td>{{df3.냉수환수.1}}</td>
                                       <td>{{df3.온도차.1}}</td>
-                                      <td>{{온도}}</td>
-                                      <td>{{온도}}</td>
-                                      <td>{{온도}}</td>
+                                      <td>{{df3.냉각수공급.1}}</td>
+                                      <td>{{df3.냉각수환수.1}}</td>
+                                      <td>{{df3.냉각수온도차.1}}</td>
                                     </tr>
                                     <tr>
                                       <th scope="row">터보3</th>
-                                      <td>{{df3.상태.2}}</td>
+                                      <td><span style="background: linear-gradient(to top, {{df3.색상.2}}, transparent 50%)">{{df3.상태.2}}</span></td>
                                       <td>{{df3.냉수공급.2}}</td>
                                       <td>{{df3.냉수환수.2}}</td>
                                       <td>{{df3.온도차.2}}</td>
-                                      <td>{{온도}}</td>
-                                      <td>{{온도}}</td>
-                                      <td>{{온도}}</td>
+                                      <td>{{df3.냉각수공급.2}}</td>
+                                      <td>{{df3.냉각수환수.2}}</td>
+                                      <td>{{df3.냉각수온도차.2}}</td>
                                     </tr>
                                       <tr>
                                       <th scope="row">터보4</th>
-                                      <td>{{df3.상태.3}}</td>
+                                      <td><span style="background: linear-gradient(to top, {{df3.색상.3}}, transparent 50%)">{{df3.상태.3}}</span></td>
                                       <td>{{df3.냉수공급.3}}</td>
                                       <td>{{df3.냉수환수.3}}</td>
                                       <td>{{df3.온도차.3}}</td>
-                                      <td>{{온도}}</td>
-                                      <td>{{온도}}</td>
-                                      <td>{{온도}}</td>
+                                      <td>{{df3.냉각수공급.3}}</td>
+                                      <td>{{df3.냉각수환수.3}}</td>
+                                      <td>{{df3.냉각수온도차.3}}</td>
                                     </tr>
                                     <tr>
                                       <th scope="row">터보5</th>
-                                      <td>{{df3.상태.4}}</td>
+                                      <td><span style="background: linear-gradient(to top, {{df3.색상.4}}, transparent 50%)">{{df3.상태.4}}</span></td>
                                       <td>{{df3.냉수공급.4}}</td>
                                       <td>{{df3.냉수환수.4}}</td>
                                       <td>{{df3.온도차.4}}</td>
-                                      <td>{{온도}}</td>
-                                      <td>{{온도}}</td>
-                                      <td>{{온도}}</td>
+                                      <td>{{df3.냉각수공급.4}}</td>
+                                      <td>{{df3.냉각수환수.4}}</td>
+                                      <td>{{df3.냉각수온도차.4}}</td>
                                     </tr>
                                     <tr>
                                       <th scope="row">터보6</th>
-                                      <td>{{df3.상태.5}}</td>
+                                      <td><span style="background: linear-gradient(to top, {{df3.색상.5}}, transparent 50%)">{{df3.상태.5}}</span></td>
                                       <td>{{df3.냉수공급.5}}</td>
                                       <td>{{df3.냉수환수.5}}</td>
                                       <td>{{df3.온도차.5}}</td>
-                                      <td>{{온도}}</td>
-                                      <td>{{온도}}</td>
-                                      <td>{{온도}}</td>
+                                      <td>{{df3.냉각수공급.5}}</td>
+                                      <td>{{df3.냉각수환수.5}}</td>
+                                      <td>{{df3.냉각수온도차.5}}</td>
                                     </tr>
                                     <tr>
                                       <th scope="row">터보7</th>
-                                      <td>{{df3.상태.6}}</td>
+                                      <td><span style="background: linear-gradient(to top, {{df3.색상.6}}, transparent 50%)">{{df3.상태.6}}</span></td>
                                       <td>{{df3.냉수공급.6}}</td>
                                       <td>{{df3.냉수환수.6}}</td>
                                       <td>{{df3.온도차.6}}</td>
-                                      <td>{{온도}}</td>
-                                      <td>{{온도}}</td>
-                                      <td>{{온도}}</td>
+                                      <td>{{df3.냉각수공급.6}}</td>
+                                      <td>{{df3.냉각수환수.6}}</td>
+                                      <td>{{df3.냉각수온도차.6}}</td>
                                     </tr>
                                   </tbody>
                                 </table>
