@@ -52,29 +52,6 @@
                                 <canvas id="myChart" width="200" height="400"></canvas>
                                 <script> 
                                     var ctx = document.getElementById('myChart');
-                                    var option = { responsive: false,
-                                                  tooltips: { enabled: false},
-                                                  hover: { animationDuration: 0},
-                                                  scales: { xAxes: [{ ticks: { beginAtZero: true } }] },
-                                                  animation: { duration: 1, 
-                                                              onComplete: function () {var chartInstance = this.chart,
-                                                              ctx = chartInstance.ctx;
-                                                              ctx.font = Chart.helpers.fontString(Chart.defaults.global.defaultFontSize, 
-                                                                                                  Chart.defaults.global.defaultFontStyle, 
-                                                                                                  Chart.defaults.global.defaultFontFamily);
-                                                                                       ctx.fillStyle = 'purple';
-                                                                                       ctx.textAlign = 'center';
-                                                                                       ctx.textBaseline = 'bottom';
-                                                                                       this.data.datasets.forEach(function (dataset, i) {
-                                                                                           var meta = chartInstance.controller.getDatasetMeta(i);
-                                                                                           meta.data.forEach(function (bar, index) {
-                                                                                               var data = dataset.data[index];
-                                                                                               ctx.fillText(data, bar._model.x, bar._model.y - 5);});});},
-                                                 plugins: { datalabels: { formatter: function (value, context) 
-                                                                         {return context.chart.data.labels[context.dataIndex];},
-                                                                        },
-                                                          },
-                                                 };
                                     var labels = ['{{df2.설비명.0}}', '{{df2.설비명.1}}', '{{df2.설비명.2}}', '{{df2.설비명.3}}', 
                                                   '{{df2.설비명.4}}', '{{df2.설비명.5}}', '{{df2.설비명.6}}', '{{df2.설비명.7}}', 
                                                   '{{df2.설비명.8}}', '{{df2.설비명.9}}', '{{df2.설비명.10}}', '{{df2.설비명.11}}', 
@@ -109,6 +86,29 @@
                                                'rgba(75, 192, 192, 1)', 'rgba(75, 192, 192, 1)', 
                                                'rgba(75, 192, 192, 1)', 'rgba(75, 192, 192, 1)', 
                                                'rgba(75, 192, 192, 1)', ];
+                                    var option = { responsive: false,
+                                                  tooltips: { enabled: false},
+                                                  hover: { animationDuration: 0},
+                                                  scales: { xAxes: [{ ticks: { beginAtZero: true } }] },
+                                                  animation: { duration: 1, 
+                                                              onComplete: function () {var chartInstance = this.chart,
+                                                              ctx = chartInstance.ctx;
+                                                              ctx.font = Chart.helpers.fontString(Chart.defaults.global.defaultFontSize, 
+                                                                                                  Chart.defaults.global.defaultFontStyle, 
+                                                                                                  Chart.defaults.global.defaultFontFamily);
+                                                                                       ctx.fillStyle = 'purple';
+                                                                                       ctx.textAlign = 'center';
+                                                                                       ctx.textBaseline = 'bottom';
+                                                                                       this.data.datasets.forEach(function (dataset, i) {
+                                                                                           var meta = chartInstance.controller.getDatasetMeta(i);
+                                                                                           meta.data.forEach(function (bar, index) {
+                                                                                               var data = dataset.data[index];
+                                                                                               ctx.fillText(data, bar._model.x, bar._model.y - 5);});});},
+                                                 plugins: { datalabels: { formatter: function (value, context) 
+                                                                         {return context.chart.data.labels[context.dataIndex];},
+                                                                        },
+                                                          },
+                                                 };
                                     var myChart = new Chart(ctx, { type: 'horizontalBar', 
                                                                 data: { labels: labels, 
                                                                        datasets: [{ label: '실내온도',
