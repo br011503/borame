@@ -71,6 +71,10 @@ def page_hvac(request):
     values['meas'] = [round(i/3024, -1) for i in result['meas']]
     values['max_pred'] = max(values['pred'])
     values['time'] = result['time']
+    a = [1 if i == 'ON' else 0 for i in list(json.loads(result['opt_out'])['냉동기'].values())]
+    b = [500, 500, 500, 250, 250, 250, 250]
+    c = [a[i]*b[i] for i in range(0, 7)]
+    values['Capa'] = sum(c)
     values['opt_out'] = json.loads(result['opt_out'])
     return render(request, "tables/page_hvac.html", context = values)
 
