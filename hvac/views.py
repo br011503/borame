@@ -67,8 +67,8 @@ def page_hvac(request):
     result = json.loads(streamdownloader.readall())
     values = json.loads(result['result'])
     values['index_col'] = result['index_col']
-    values['pred'] = result['pred']
-    values['meas'] = result['meas']
+    values['pred'] = [round(i/3024, -1) for i in result['pred']]
+    values['meas'] = [round(i/3024, -1) for i in result['meas']]
     values['max_pred'] = max(values['pred'])
     values['time'] = result['time']
     values['opt_out'] = json.loads(result['opt_out'])
