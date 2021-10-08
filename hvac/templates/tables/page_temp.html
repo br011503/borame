@@ -104,9 +104,6 @@
                                                                                            meta.data.forEach(function (bar, index) {
                                                                                                var data = dataset.data[index];
                                                                                                ctx.fillText(data, bar._model.x, bar._model.y - 5);});});},
-                                                 plugins: { datalabels: { formatter: function (value, context) 
-                                                                         {return context.chart.data.labels[context.dataIndex];},
-                                                                        },
                                                           },
                                                  };
                                     var myChart = new Chart(ctx, { type: 'horizontalBar', 
