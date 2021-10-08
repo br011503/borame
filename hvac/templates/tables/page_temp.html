@@ -52,7 +52,7 @@
                                 <canvas id="myChart" width="200" height="400"></canvas>
                                 <script> 
                                     var ctx = document.getElementById('myChart');
-                                    var options = { scales: { xAxes: [{ ticks: { beginAtZero: true } }] } } };
+//                                     var options = { scales: { xAxes: [{ ticks: { beginAtZero: true } }] } } };
                                     var myChart = new Chart(ctx, { type: 'horizontalBar', 
                                                                 data: { labels: ['{{df2.설비명.0}}', '{{df2.설비명.1}}', '{{df2.설비명.2}}', '{{df2.설비명.3}}', 
                                                                                  '{{df2.설비명.4}}', '{{df2.설비명.5}}', '{{df2.설비명.6}}', '{{df2.설비명.7}}', 
@@ -89,8 +89,7 @@
                                                                                                   'rgba(75, 192, 192, 1)', 'rgba(75, 192, 192, 1)', 
                                                                                                   'rgba(75, 192, 192, 1)', 'rgba(75, 192, 192, 1)', 
                                                                                                   'rgba(75, 192, 192, 1)', ], borderWidth: 1 }] }, 
-                                                                options: options); 
-//                                                                 options: { scales: { xAxes: [{ ticks: { beginAtZero: true } }] } } }); 
+                                                                options: { scales: { xAxes: [{ ticks: { beginAtZero: true } }] } } }); 
                                 </script>
                             </div>
                         </div>
