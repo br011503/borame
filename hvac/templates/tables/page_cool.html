@@ -40,9 +40,97 @@
                 <div class="p-2 p-lg-5 bg-light rounded-3 text-center">
                     <div class="m-3 m-lg-5">
                         <h2 class="fs-4 fw-bold"> 실내 냉방기 부하율 현황 </h2>
-                        <p class="fs-6"> {{text.설비명.0}}: 부하율({{text.현재값.0}}%) </p>
-                        <p class="fs-6"> {{text.설비명.1}}: 부하율({{text.현재값.1}}%) </p>
-                        <p class="fs-6"> {{text.설비명.2}}: 부하율({{text.현재값.2}}%) </p>
+                        <h2 class="fs-4 fw-bold"> 권장환기량 </h2>
+                        <table class="table table-striped">
+                          <thead>
+                            <tr>
+                              <th scope="col">층</th>
+                              <th scope="col">부하율(%)</th>
+                            </tr>
+                          </thead>
+                          <tbody>
+                            <tr>
+                              <th scope="row">{{dfs.층.0}}</th>
+                              <td>
+                                  <div class="progress">
+                                    <div class="progress-bar" role="progressbar" style="width: {{dfs.부하율.0}}%;" aria-valuenow="25" aria-valuemin="0" aria-valuemax="100">{{dfs.부하율.0}}</div>
+                                  </div>
+                              </td>
+                            </tr>
+                            <tr>
+                              <th scope="row">{{dfs.층.1}}</th>
+                              <td>
+                                  <div class="progress">
+                                    <div class="progress-bar" role="progressbar" style="width: {{dfs.부하율.1}}%;" aria-valuenow="25" aria-valuemin="0" aria-valuemax="100">{{dfs.부하율.1}}</div>
+                                  </div>
+                              </td>
+                            </tr>
+                            <tr>
+                              <th scope="row">{{dfs.층.2}}</th>
+                              <td>
+                                  <div class="progress">
+                                    <div class="progress-bar" role="progressbar" style="width: {{dfs.부하율.2}}%;" aria-valuenow="25" aria-valuemin="0" aria-valuemax="100">{{dfs.부하율.2}}</div>
+                                  </div>
+                              </td>
+                            </tr>
+                            <tr>
+                              <th scope="row">{{dfs.층.3}}</th>
+                              <td>
+                                  <div class="progress">
+                                    <div class="progress-bar" role="progressbar" style="width: {{dfs.부하율.3}}%;" aria-valuenow="25" aria-valuemin="0" aria-valuemax="100">{{dfs.부하율.3}}</div>
+                                  </div>
+                              </td>
+                            </tr>
+                            <tr>
+                              <th scope="row">{{dfs.층.4}}</th>
+                              <td>
+                                  <div class="progress">
+                                    <div class="progress-bar" role="progressbar" style="width: {{dfs.부하율.4}}%;" aria-valuenow="25" aria-valuemin="0" aria-valuemax="100">{{dfs.부하율.4}}</div>
+                                  </div>
+                              </td>
+                            </tr>
+                            <tr>
+                              <th scope="row">{{dfs.층.5}}</th>
+                              <td>
+                                  <div class="progress">
+                                    <div class="progress-bar" role="progressbar" style="width: {{dfs.부하율.5}}%;" aria-valuenow="25" aria-valuemin="0" aria-valuemax="100">{{dfs.부하율.5}}</div>
+                                  </div>
+                              </td>
+                            </tr>
+                            <tr>
+                              <th scope="row">{{dfs.층.6}}</th>
+                              <td>
+                                  <div class="progress">
+                                    <div class="progress-bar" role="progressbar" style="width: {{dfs.부하율.6}}%;" aria-valuenow="25" aria-valuemin="0" aria-valuemax="100">{{dfs.부하율.6}}</div>
+                                  </div>
+                              </td>
+                            </tr>
+                            <tr>
+                              <th scope="row">{{dfs.층.7}}</th>
+                              <td>
+                                  <div class="progress">
+                                    <div class="progress-bar" role="progressbar" style="width: {{dfs.부하율.7}}%;" aria-valuenow="25" aria-valuemin="0" aria-valuemax="100">{{dfs.부하율.7}}</div>
+                                  </div>
+                              </td>
+                            </tr>
+                            <tr>
+                              <th scope="row">{{dfs.층.8}}</th>
+                              <td>
+                                  <div class="progress">
+                                    <div class="progress-bar" role="progressbar" style="width: {{dfs.부하율.8}}%;" aria-valuenow="25" aria-valuemin="0" aria-valuemax="100">{{dfs.부하율.8}}</div>
+                                  </div>
+                              </td>
+                            </tr>
+                            <tr>
+                              <th scope="row">{{dfs.층.9}}</th>
+                              <td>
+                                  <div class="progress">
+                                    <div class="progress-bar" role="progressbar" style="width: {{dfs.부하율.9}}%;" aria-valuenow="25" aria-valuemin="0" aria-valuemax="100">{{dfs.부하율.9}}</div>
+                                  </div>
+                              </td>
+                            </tr>
+                          </tbody>
+                        </table>
                     </div>
                 </div>
             </div>
@@ -63,25 +151,23 @@
                                 <canvas id="myChart" width="200" height="200"></canvas>
                                 <script> var ctx = document.getElementById('myChart'); 
                                   var myChart = new Chart(ctx, { type: 'bar', 
-                                                                data: { labels: ['{{df1.층.0}}', '{{df1.층.1}}', '{{df1.층.2}}', '{{df1.층.3}}', 
-                                                                                 '{{df1.층.4}}', '{{df1.층.5}}', '{{df1.층.6}}', ], 
+                                                                data: { labels: ['{{df1.층.0}}', '{{df1.층.1}}', '{{df1.층.2}}', 
+                                                                                 '{{df1.층.3}}', '{{df1.층.4}}', '{{df1.층.5}}', ], 
                                                                        datasets: [{ label: '최근2주간 평균부하율(%)',
-                                                                                   data: [{{df1.현재값.0}}, {{df1.현재값.1}}, {{df1.현재값.2}}, {{df1.현재값.3}}, 
-                                                                                          {{df1.현재값.4}}, {{df1.현재값.5}}, {{df1.현재값.6}}, ], 
+                                                                                   data: [{{df1.현재값.0}}, {{df1.현재값.1}}, {{df1.현재값.2}}, 
+                                                                                          {{df1.현재값.3}}, {{df1.현재값.4}}, {{df1.현재값.5}}, ], 
                                                                                    backgroundColor: ['rgba(255, 99, 132, 0.2)', 
                                                                                                      'rgba(255, 206, 86, 0.2)', 
                                                                                                      'rgba(54, 162, 235, 0.2)', 
                                                                                                      'rgba(75, 192, 192, 0.2)', 
                                                                                                      'rgba(255, 99, 132, 0.2)', 
-                                                                                                     'rgba(255, 206, 86, 0.2)', 
-                                                                                                     'rgba(54, 162, 235, 0.2)', ], 
+                                                                                                     'rgba(255, 206, 86, 0.2)', ], 
                                                                                    borderColor: [ 'rgba(255, 99, 132, 1)', 
                                                                                                   'rgba(255, 206, 86, 1)', 
                                                                                                   'rgba(54, 162, 235, 1)', 
                                                                                                   'rgba(75, 192, 192, 1)', 
                                                                                                   'rgba(255, 99, 132, 1)', 
-                                                                                                  'rgba(255, 206, 86, 1)', 
-                                                                                                  'rgba(54, 162, 235, 1)', ], borderWidth: 1 }] }, 
+                                                                                                  'rgba(255, 206, 86, 1)', ], borderWidth: 1 }] }, 
                                                                 options: { scales: { yAxes: [{ ticks: { beginAtZero: true } }] } } }); </script>
                             </div>
                         </div>
