@@ -92,7 +92,7 @@ def page_temp(request):
         result = json.loads(result.decode("utf-8"))
     except urllib.error.HTTPError as error:
         print("The request failed with status code: " + str(error.code))
-    values = json.loads(result['df1'])
+    values = json.loads(result['df2'])
     values['df2'] = json.loads(result['df2'])
     return render(request, "tables/page_temp.html", context = values)
 
