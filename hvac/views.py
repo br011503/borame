@@ -82,8 +82,8 @@ def page_temp(request):
     allowSelfSignedHttps(True) # this line is needed if you use self-signed certificate in your scoring service.
     data = {'param': {'bld': '1' }}
     body = str.encode(json.dumps(data))
-    url = 'http://52.141.0.146:80/api/v1/service/tsop-skt-borame-tempload/score'
-    api_key = 'sWdF9CmWaZmVgxN1OgzrFDCHvgE20ZNX' # Replace this with the API key for the web service
+    url = 'http://52.141.0.146:80/api/v1/service/tsop-skt-borame-temp/score'
+    api_key = 'ZNG98IZWOyxCeOBcAbYrbpeRfzMmDsUn' # Replace this with the API key for the web service
     headers = {'Content-Type':'application/json', 'Authorization':('Bearer '+ api_key)}
     req = urllib.request.Request(url, body, headers)
     try:
@@ -93,7 +93,6 @@ def page_temp(request):
     except urllib.error.HTTPError as error:
         print("The request failed with status code: " + str(error.code))
     values = json.loads(result['df1'])
-    values['df1'] = json.loads(result['df1'])
     values['df2'] = json.loads(result['df2'])
     return render(request, "tables/page_temp.html", context = values)
 
@@ -113,7 +112,6 @@ def page_cool(request):
         print("The request failed with status code: " + str(error.code))
     values = json.loads(result['df1'])
     values['df1'] = json.loads(result['df1'])
-    values['df2'] = json.loads(result['df2'])
     values['dfs'] = json.loads(result['dfs'])
     return render(request, "tables/page_cool.html", context = values)
 
