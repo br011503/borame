@@ -954,7 +954,17 @@ progress {
     flex: 0 0 auto;
     width: 33.33333333%;
   }
+  
+.blink_me {
+  animation: blinker 1s linear infinite;
+}
 
+@keyframes blinker {
+  50% {
+    opacity: 0;
+  }
+}
+  
   .col-sm-5 {
     flex: 0 0 auto;
     width: 41.66666667%;
