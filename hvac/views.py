@@ -19,8 +19,8 @@ def index(request):
     allowSelfSignedHttps(True) # this line is needed if you use self-signed certificate in your scoring service.
     data = {'param': {'bld': '1' }}
     body = str.encode(json.dumps(data))
-    url = 'http://52.141.0.146:80/api/v1/service/tsop-skt-borame-main/score'
-    api_key = 'bNxBFk8mDGy4OWxYsu5vlAulYglVUCh1' # Replace this with the API key for the web service
+    url = 'http://20.214.223.234:80/api/v1/service/aihvac-skt-web-boramae-main/score'
+    api_key = 'Xgybm2EyzAJ9i56w2jeeh2Tsmy1egv3Y' # Replace this with the API key for the web service
     headers = {'Content-Type':'application/json', 'Authorization':('Bearer '+ api_key)}
     req = urllib.request.Request(url, body, headers)
     try:
@@ -44,9 +44,9 @@ def index(request):
 
 def page_hvac(request):
     # 모델스토리지 연결
-    blob_storage_account = 'hvacstorage'
-    blob_storage_container = 'borame-loadpred'
-    blob_storage_key = 'jnJ3rPaeF08fafa0iP9NDbit7Flu92P57iOcm3IRsMDmdl88rYzIY7i7igZ+727gyvw+RYa9QT6ZFEeEZCSQ3w=='
+    blob_storage_account = 'staihvac001prod'
+    blob_storage_container = 'output-boramae-coolingload-prediction'
+    blob_storage_key = 'dZuuVZTWnEjxoafjyjA77xJXzpkGoOPZgWHvfBF7NIA1sXsvmJT9DFEQ8gOLS0Wgz2f3BEOGH8wU+AStfrzykg=='
 
     permission = ContainerSasPermissions(read=True, write=True, 
                                             delete=True, list=True, 
@@ -82,8 +82,8 @@ def page_temp(request):
     allowSelfSignedHttps(True) # this line is needed if you use self-signed certificate in your scoring service.
     data = {'param': {'bld': '1' }}
     body = str.encode(json.dumps(data))
-    url = 'http://52.141.0.146:80/api/v1/service/tsop-skt-borame-temp/score'
-    api_key = 'ZNG98IZWOyxCeOBcAbYrbpeRfzMmDsUn' # Replace this with the API key for the web service
+    url = 'http://20.214.223.234:80/api/v1/service/aihvac-skt-web-boramae-zonetemp/score'
+    api_key = 'bkdXuhqWKrGgoyfNjFzjoYB98oOEKRX4' # Replace this with the API key for the web service
     headers = {'Content-Type':'application/json', 'Authorization':('Bearer '+ api_key)}
     req = urllib.request.Request(url, body, headers)
     try:
@@ -100,8 +100,8 @@ def page_cool(request):
     allowSelfSignedHttps(True) # this line is needed if you use self-signed certificate in your scoring service.
     data = {'param': {'bld': '1' }}
     body = str.encode(json.dumps(data))
-    url = 'http://52.141.0.146:80/api/v1/service/tsop-skt-borame-tempload/score'
-    api_key = 'sWdF9CmWaZmVgxN1OgzrFDCHvgE20ZNX' # Replace this with the API key for the web service
+    url = 'http://20.214.223.234:80/api/v1/service/aihvac-skt-web-boramae-load/score'
+    api_key = 'iSEbFwHtb1GUhzVKihJChmM9dTaLjAgW' # Replace this with the API key for the web service
     headers = {'Content-Type':'application/json', 'Authorization':('Bearer '+ api_key)}
     req = urllib.request.Request(url, body, headers)
     try:
@@ -119,8 +119,8 @@ def page_elec(request):
     allowSelfSignedHttps(True) # this line is needed if you use self-signed certificate in your scoring service.
     data = {'param': {'bld': '1' }}
     body = str.encode(json.dumps(data))
-    url = 'http://52.141.0.146:80/api/v1/service/tsop-skt-borame-elec/score'
-    api_key = 'NogOkGsn8WcVNLfhuDFc6vYNPumr0K0w' # Replace this with the API key for the web service
+    url = 'http://20.214.223.234:80/api/v1/service/aihvac-skt-web-boramae-elec/score'
+    api_key = '60CdL3wTzDAASNnjYQtCTMILXuhIPrxJ' # Replace this with the API key for the web service
     headers = {'Content-Type':'application/json', 'Authorization':('Bearer '+ api_key)}
     req = urllib.request.Request(url, body, headers)
     try:
